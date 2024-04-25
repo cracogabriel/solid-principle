@@ -27,26 +27,33 @@ No caso, o código a seguir usa o tipo "Animal" como tipagem principal, quando o
 
 ```
 class Animal {
-	name: string;
-	age: number;
-	constructor(name: string, age: number) { this.name = name; this.age = age; }
+  name: string;
+  age: number;
 
-	eat() {}
-	walk() {}
+  constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
+  }
+
+  eat() {}
+  walk() {}
 }
 
 class PetShop {
-	animals: Array<Animal>; // depende diretamente da classe Animal
-	constructor(animals: Array<Animal>) { this.animals = animals; }
+  animals: Array<Animal>; // depends from class Animal
 
-	print(animals: Array<Animal>) {
-		console.log(animals);
-	}
+  constructor(animals: Array<Animal>) {
+    this.animals = animals;
+  }
+
+  print(animals: Array<Animal>) {
+    console.log(animals);
+  }
 }
 
-function main() {
-	const dog = new Animal("Rogerio", 10);
-	const petShop = new PetShop([dog]);
-	petShop.print(petShop.animals);
+export function runDependencyInversion() {
+  const dog = new Animal("Rogerio", 10);
+  const petShop = new PetShop([dog]);
+  petShop.print(petShop.animals);
 }
 ```
