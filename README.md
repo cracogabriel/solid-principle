@@ -1,6 +1,6 @@
 # solid-principle
 
-## Essa é a branch "errada", aqui os princípios são violados.
+## Essa é a branch "correta", aqui os princípios estão de acordo.
 
 ### Como rodar o projeto:
 
