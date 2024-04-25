@@ -1,4 +1,11 @@
-class Animal {
+interface IAnimal {
+  name: string;
+  age: number;
+  eat(): void;
+  walk(): void;
+}
+
+class Animal implements IAnimal {
   name: string;
   age: number;
 
@@ -12,19 +19,19 @@ class Animal {
 }
 
 class PetShop {
-  animals: Array<Animal>; // depends from class Animal
+  animals: Array<IAnimal>;
 
-  constructor(animals: Array<Animal>) {
+  constructor(animals: Array<IAnimal>) {
     this.animals = animals;
   }
 
-  print(animals: Array<Animal>) {
-    console.log(animals);
+  print() {
+    console.log(this.animals);
   }
 }
 
 export function runDependencyInversion() {
-  const dog = new Animal("Rogerio", 10);
+  const dog: IAnimal = new Animal("Rogerio", 10);
   const petShop = new PetShop([dog]);
-  petShop.print(petShop.animals);
+  petShop.print();
 }
