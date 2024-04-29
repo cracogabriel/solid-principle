@@ -22,6 +22,52 @@ yarn start
 
 ```
 
+## L do SOLID - Liskov Substitution Principle
+
+> File: src/liskov-substitution.ts
+
+O código a seguir resolve o problema de substituição de Liskov da branch [how-not-to-do](https://github.com/cracogabriel/solid-principle/tree/how-not-to-do?tab=readme-ov-file#l-do-solid---liskov-substitution-principle). Na versão corrigida, Rectangle e Square implementam a interface Shape e não afetam o comportamento um do outro. Isto está de acordo com o Princípio da Substituição de Liskov. Podemos substituir um Rectangle por um Square ou vice-versa, e o programa ainda se comportará corretamente.
+
+```
+interface Shape {
+  getArea(): number;
+}
+
+class Rectangle implements Shape {
+  width: number;
+  height: number;
+
+  constructor(width: number, height: number) {
+    this.width = width;
+    this.height = height;
+  }
+
+  getArea() {
+    return this.width * this.height;
+  }
+}
+
+class Square implements Shape {
+  side: number;
+
+  constructor(side: number) {
+    this.side = side;
+  }
+
+  getArea() {
+    return this.side * this.side;
+  }
+}
+
+export const runLiskovSubstitution = () => {
+  let rectangle: Shape = new Rectangle(5, 4);
+  console.log(rectangle.getArea());
+
+  let square: Shape = new Square(5);
+  console.log(square.getArea());
+};
+```
+
 ## I do SOLID - Interface Segregation Principle
 
 > File: src/interface-segregation.ts
