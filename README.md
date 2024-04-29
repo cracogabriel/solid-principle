@@ -26,7 +26,7 @@ yarn start
 
 > File: src/liskov-substitution.ts
 
-O código a seguir resolve o problema de Aberto-fechado da branch [how-not-to-do](https://github.com/cracogabriel/solid-principle/tree/how-not-to-do?tab=readme-ov-file#o-do-solid---open-closed-principle). Na versão corrigida, foi definido uma interface de pagamento Payment com um método de processo. Ambas as classes CreditCardPayment e PayPalPayment implementam essa interface. A classe PaymentProcessor agora funciona com a interface Payment, portanto pode processar qualquer pagamento que implemente esta interface sem precisar ser modificado. Isso segue o Princípio Aberto-Fechado.
+O código a seguir resolve o problema de Aberto-Fechado da branch [how-not-to-do](https://github.com/cracogabriel/solid-principle/tree/how-not-to-do?tab=readme-ov-file#o-do-solid---open-closed-principle). Na versão corrigida, foi definido uma interface de pagamento Payment com um método de processo. Ambas as classes CreditCardPayment e PayPalPayment implementam essa interface. A classe PaymentProcessor agora funciona com a interface Payment, portanto pode processar qualquer pagamento que implemente esta interface sem precisar ser modificado. Isso segue o Princípio Aberto-Fechado.
 
 ```
 interface Payment {
