@@ -22,6 +22,25 @@ yarn start
 
 ```
 
+## O do SOLID - Open Closed Principle
+
+> File: src/open-closed.ts
+
+No código abaixo, se quisermos adicionar um novo tipo de pagamento (como Pix), teríamos que modificar a classe PaymentProcessor. Isso viola o **OCP**.
+
+```
+class PaymentProcessor {
+  process(paymentType: string, amount: number): void {
+    // what if I want to pay with Pix? how do I implement that without changing this code?
+    if (paymentType === "creditCard") {
+      console.log(`Processing credit card payment of $${amount}`);
+    } else if (paymentType === "paypal") {
+      console.log(`Processing PayPal payment of $${amount}`);
+    }
+  }
+}
+```
+
 ## L do SOLID - Liskov Substitution Principle
 
 > File: src/liskov-substitution.ts
