@@ -22,6 +22,32 @@ yarn start
 
 ```
 
+## I do SOLID - Interface Segregation Principle
+
+> File: src/interface-segregation.ts
+
+O código a seguir resolve o problema de segregação de interface da branch [how-not-to-do](https://github.com/cracogabriel/solid-principle/tree/how-not-to-do?tab=readme-ov-file#i-do-solid---interface-segregation-principle). A classe Robot não depende implementa mais o método eat(), pois a interface IWorker não "come" mais, agora criamos uma outra interface que implementa o método comer. A classe Pessoa implementa IWorker e IEater, podendo comer e trabalhar!
+
+```
+interface IWorker {
+  work(): void;
+}
+
+interface IEater {
+  eat(): void;
+}
+
+class Person implements IWorker, IEater {
+  work(): void {}
+
+  eat(): void {}
+}
+
+class Robot implements IWorker {
+  work(): void {}
+}
+```
+
 ## D do SOLID - Dependency Inversion Principle
 
 > File: src/dependency-inversion.ts
